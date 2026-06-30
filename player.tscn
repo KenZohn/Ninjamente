@@ -187,9 +187,16 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_i3pqv"]
+size = Vector2(14, 6)
+
 [node name="Player" type="CharacterBody2D" unique_id=1903297482]
 script = ExtResource("1_i3pqv")
 
 [node name="Sprite" type="AnimatedSprite2D" parent="." unique_id=923278743]
 sprite_frames = SubResource("SpriteFrames_7hik5")
 animation = &"idle_down"
+
+[node name="Collision" type="CollisionShape2D" parent="." unique_id=1658636845]
+position = Vector2(0, 5)
+shape = SubResource("RectangleShape2D_i3pqv")
