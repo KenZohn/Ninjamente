@@ -191,6 +191,7 @@ animations = [{
 size = Vector2(14, 6)
 
 [node name="Player" type="CharacterBody2D" unique_id=1903297482]
+motion_mode = 1
 script = ExtResource("1_i3pqv")
 
 [node name="Sprite" type="AnimatedSprite2D" parent="." unique_id=923278743]
