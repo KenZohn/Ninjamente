@@ -1,0 +1,135 @@
+[gd_scene format=3 uid="uid://da6lj5t2i3llm"]
+
+[ext_resource type="Script" uid="uid://1an86fev67ct" path="res://battle/battle_menu_button.gd" id="1_mr6kt"]
+[ext_resource type="Texture2D" uid="uid://blmxqho38r32a" path="res://Ninja Adventure - Asset Pack/Ui/Theme/Wip/ThemeBamboo/nine_path_panel.png" id="2_g2ep1"]
+[ext_resource type="FontFile" uid="uid://b6bjyf243r3tb" path="res://Ninja Adventure - Asset Pack/Ui/Font/NormalFont.ttf" id="3_1riwo"]
+[ext_resource type="Texture2D" uid="uid://bvw8t20riaova" path="res://Ninja Adventure - Asset Pack/FX/Projectile/Shuriken.png" id="4_q5fg4"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pfmtq"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7v06p"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dla7l"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_s86lo"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3kp7h"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s24ib"]
+atlas = ExtResource("4_q5fg4")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8pfyt"]
+atlas = ExtResource("4_q5fg4")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_55tvf"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s24ib")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8pfyt")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="Animation" id="Animation_gvlwl"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Background:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_0swxd"]
+resource_name = "focus"
+length = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Background:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.05),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(8, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_j6vp2"]
+_data = {
+&"RESET": SubResource("Animation_gvlwl"),
+&"focus": SubResource("Animation_0swxd")
+}
+
+[node name="BattleMenuButton" type="Control" unique_id=1854637931]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 64.0
+offset_bottom = 24.0
+script = ExtResource("1_mr6kt")
+
+[node name="Background" type="NinePatchRect" parent="." unique_id=1797415584]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -1.5258789e-05
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_g2ep1")
+patch_margin_left = 8
+patch_margin_top = 8
+patch_margin_right = 8
+patch_margin_bottom = 8
+
+[node name="Button" type="Button" parent="Background" unique_id=1518085031]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_1riwo")
+theme_override_font_sizes/font_size = 8
+theme_override_styles/normal = SubResource("StyleBoxFlat_pfmtq")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_7v06p")
+theme_override_styles/hover = SubResource("StyleBoxFlat_dla7l")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_s86lo")
+theme_override_styles/focus = SubResource("StyleBoxFlat_3kp7h")
+text = "ACTION"
+
+[node name="Cursor" type="AnimatedSprite2D" parent="." unique_id=529891786]
+visible = false
+position = Vector2(-3, 12)
+sprite_frames = SubResource("SpriteFrames_55tvf")
+autoplay = "default"
+frame_progress = 0.7576243
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=745248538]
+libraries/ = SubResource("AnimationLibrary_j6vp2")
+
+[connection signal="focus_entered" from="Background/Button" to="." method="_on_button_focus_entered"]
+[connection signal="focus_exited" from="Background/Button" to="." method="_on_button_focus_exited"]

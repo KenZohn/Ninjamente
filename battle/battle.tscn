@@ -1,0 +1,128 @@
+[gd_scene format=4 uid="uid://byh0354vm1wa1"]
+
+[ext_resource type="Texture2D" uid="uid://ctojsw02fhs77" path="res://Ninja Adventure - Asset Pack/Ui/Theme/Wip/ThemeMetal2/nine_path_panel.png" id="1_6hnvb"]
+[ext_resource type="Script" uid="uid://d4jm6rueuwy3j" path="res://battle/battle.gd" id="1_l1kiu"]
+[ext_resource type="TileSet" uid="uid://c05q3kfbsmw4i" path="res://tileset.tres" id="2_4mnim"]
+[ext_resource type="Texture2D" uid="uid://7ggpu3xaaymf" path="res://Ninja Adventure - Asset Pack/Actor/Character/EggBoy/SeparateAnim/Idle.png" id="3_l1kiu"]
+[ext_resource type="Texture2D" uid="uid://bwlch0ul3ejsn" path="res://Ninja Adventure - Asset Pack/Actor/Monster/Slime/Slime.png" id="4_7fucf"]
+[ext_resource type="PackedScene" uid="uid://da6lj5t2i3llm" path="res://battle/battle_menu_button.tscn" id="5_4mnim"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mhv3b"]
+atlas = ExtResource("3_l1kiu")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lcjiy"]
+atlas = ExtResource("4_7fucf")
+region = Rect2(32, 0, 16, 16)
+
+[node name="Battle" type="Control" unique_id=1618110637]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_l1kiu")
+
+[node name="Background" type="NinePatchRect" parent="." unique_id=84577616]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_6hnvb")
+patch_margin_left = 8
+patch_margin_top = 8
+patch_margin_right = 8
+patch_margin_bottom = 8
+
+[node name="BattleFieldFrame" type="NinePatchRect" parent="." unique_id=1872254281]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 42.0
+offset_top = 10.0
+offset_right = -42.0
+offset_bottom = -130.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_6hnvb")
+patch_margin_left = 8
+patch_margin_top = 8
+patch_margin_right = 8
+patch_margin_bottom = 8
+
+[node name="BattleField" type="Control" parent="BattleFieldFrame" unique_id=955239542]
+anchors_preset = 0
+offset_left = 6.0
+offset_top = 6.0
+offset_right = 198.0
+offset_bottom = 54.0
+scale = Vector2(1.5, 1.5)
+
+[node name="Ground" type="TileMapLayer" parent="BattleFieldFrame/BattleField" unique_id=1304038421]
+tile_map_data = PackedByteArray("AAAAAAAAAQABAAQAAAABAAAAAQABAAQAAAACAAAAAQABAAQAAAADAAAAAQABAAQAAAAEAAAAAQABAAQAAAAFAAAAAQABAAQAAAAGAAAAAQABAAQAAAAHAAAAAQABAAQAAAAIAAAAAQABAAQAAAAJAAAAAQABAAQAAAAKAAAAAQABAAQAAAALAAAAAQABAAQAAAALAAEAAQABAAQAAAAKAAEAAQABAAQAAAAJAAEAAQABAAQAAAAIAAEAAQABAAQAAAAHAAEAAQABAAQAAAAGAAEAAQABAAQAAAAFAAEAAQABAAQAAAAEAAEAAQABAAQAAAADAAEAAQABAAQAAAACAAEAAQABAAQAAAABAAEAAQABAAQAAAAAAAEAAQABAAQAAAAAAAIAAQABAAQAAAABAAIAAQABAAQAAAACAAIAAQABAAQAAAADAAIAAQABAAQAAAAEAAIAAQABAAQAAAAFAAIAAQABAAQAAAAGAAIAAQABAAQAAAAHAAIAAQABAAQAAAAIAAIAAQABAAQAAAAJAAIAAQABAAQAAAAKAAIAAQABAAQAAAALAAIAAQABAAQAAAA=")
+tile_set = ExtResource("2_4mnim")
+
+[node name="Object" type="TileMapLayer" parent="BattleFieldFrame/BattleField" unique_id=323670690]
+tile_map_data = PackedByteArray("AAAFAAAABQAQAAEAAAAGAAAABQARAAEAAAABAAAABQAQAAEAAAACAAAABQARAAEAAAAJAAAABQAQAAEAAAAKAAAABQARAAEAAAAEAAAAAwAFAAIAAAAAAAIAAwADAAIAAAALAAIAAwABAAIAAAA=")
+tile_set = ExtResource("2_4mnim")
+
+[node name="Player" type="TextureRect" parent="BattleFieldFrame/BattleField" unique_id=320864124]
+layout_mode = 0
+offset_left = 37.333336
+offset_top = 26.666668
+offset_right = 53.333336
+offset_bottom = 42.666668
+texture = SubResource("AtlasTexture_mhv3b")
+stretch_mode = 2
+
+[node name="Enemy" type="TextureRect" parent="BattleFieldFrame/BattleField" unique_id=103407934]
+layout_mode = 0
+offset_left = 128.0
+offset_top = 26.666666
+offset_right = 144.0
+offset_bottom = 42.666664
+texture = SubResource("AtlasTexture_lcjiy")
+stretch_mode = 2
+
+[node name="Menu" type="Control" parent="." unique_id=345239701]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="AttackButton" parent="Menu" unique_id=1854637931 instance=ExtResource("5_4mnim")]
+layout_mode = 1
+offset_left = 32.0
+offset_top = 112.0
+offset_right = 96.0
+offset_bottom = 136.0
+
+[node name="Button" parent="Menu/AttackButton/Background" parent_id_path=PackedInt32Array(1854637931, 1797415584) index="0" unique_id=1518085031]
+text = "ATACAR"
+
+[node name="ItemButton" parent="Menu" unique_id=815310761 instance=ExtResource("5_4mnim")]
+layout_mode = 1
+offset_left = 32.0
+offset_top = 144.0
+offset_right = 96.0
+offset_bottom = 168.0
+
+[node name="Button" parent="Menu/ItemButton/Background" parent_id_path=PackedInt32Array(815310761, 1797415584) index="0" unique_id=1518085031]
+text = "ITEM"
+
+[node name="RunButton" parent="Menu" unique_id=218569428 instance=ExtResource("5_4mnim")]
+layout_mode = 1
+offset_left = 32.0
+offset_top = 176.0
+offset_right = 96.0
+offset_bottom = 200.0
+
+[node name="Button" parent="Menu/RunButton/Background" parent_id_path=PackedInt32Array(218569428, 1797415584) index="0" unique_id=1518085031]
+text = "FUGIR"
+
+[editable path="Menu/AttackButton"]
+[editable path="Menu/ItemButton"]
+[editable path="Menu/RunButton"]

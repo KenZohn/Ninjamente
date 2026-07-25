@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://bf74jlcnw8775"]
 
-[ext_resource type="Script" uid="uid://byk8idd3l4mj" path="res://enemy.gd" id="1_4gyqm"]
+[ext_resource type="Script" uid="uid://byk8idd3l4mj" path="res://character/enemy.gd" id="1_4gyqm"]
 [ext_resource type="Texture2D" uid="uid://bwlch0ul3ejsn" path="res://Ninja Adventure - Asset Pack/Actor/Monster/Slime/Slime.png" id="2_4gyqm"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qi2p4"]
