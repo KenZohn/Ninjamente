@@ -1,0 +1,158 @@
+[gd_scene format=3 uid="uid://4pyl0hyafnbw"]
+
+[ext_resource type="Script" uid="uid://dwquoplsljj68" path="res://battle/battle_transition.gd" id="1_evem3"]
+[ext_resource type="Texture2D" uid="uid://blmxqho38r32a" path="res://Ninja Adventure - Asset Pack/Ui/Theme/Wip/ThemeBamboo/nine_path_panel.png" id="1_x5ere"]
+[ext_resource type="Texture2D" uid="uid://bwlch0ul3ejsn" path="res://Ninja Adventure - Asset Pack/Actor/Monster/Slime/Slime.png" id="2_bs5tr"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_evem3"]
+atlas = ExtResource("2_bs5tr")
+region = Rect2(0, 0, 16, 15)
+
+[sub_resource type="Animation" id="Animation_rmv55"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Banner:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(384, 88)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("EnemySpriteContainer:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(415.99997, 63.999996)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Overlay:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_bs5tr"]
+resource_name = "battle_enter_end"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Overlay:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(-384, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_6gl5q"]
+resource_name = "battle_enter_start"
+length = 1.8
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Banner:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(384, 88), Vector2(0, 88)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("EnemySpriteContainer:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.2, 0.4, 1.4, 1.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(415.99997, 63.999996), Vector2(184, 64), Vector2(136, 64), Vector2(-96, 64)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Overlay:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(1.6, 1.8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(384, 0), Vector2(0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_m8hmt"]
+_data = {
+&"RESET": SubResource("Animation_rmv55"),
+&"battle_enter_end": SubResource("Animation_bs5tr"),
+&"battle_enter_start": SubResource("Animation_6gl5q")
+}
+
+[node name="BattleTransition" type="CanvasLayer" unique_id=303283159]
+process_mode = 3
+script = ExtResource("1_evem3")
+
+[node name="Banner" type="NinePatchRect" parent="." unique_id=1836042295]
+offset_left = 384.0
+offset_top = 88.0
+offset_right = 767.9995
+offset_bottom = 136.0
+texture = ExtResource("1_x5ere")
+region_rect = Rect2(6, 1, 4, 14)
+patch_margin_top = 8
+patch_margin_bottom = 8
+
+[node name="Overlay" type="ColorRect" parent="." unique_id=599532262]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 0.0004272461
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="EnemySpriteContainer" type="Control" parent="." unique_id=806300854]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 415.99997
+offset_top = 63.999996
+offset_right = 455.99994
+offset_bottom = 104.0
+scale = Vector2(1.6, 1.6)
+
+[node name="EnemySprite" type="TextureRect" parent="EnemySpriteContainer" unique_id=898643359]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 0
+texture = SubResource("AtlasTexture_evem3")
+stretch_mode = 4
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1230471151]
+libraries/ = SubResource("AnimationLibrary_m8hmt")

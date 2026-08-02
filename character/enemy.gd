@@ -3,6 +3,7 @@ extends CharacterBody2D
 @export var patrol_path: Node2D
 @export var wait_time := 2.0
 @export var speed := 40.0
+@export var data: EnemyData
 
 var last_direction = "down"
 var current_point := 0
@@ -23,7 +24,7 @@ func _physics_process(_delta):
 			velocity = Vector2.ZERO
 			waiting = true
 			$Timer.start(wait_time)
-			
+	
 	move_and_slide()
 	update_animation(direction)
 
@@ -46,3 +47,13 @@ func update_animation(direction: Vector2):
 		$Sprite.play("walk_" + last_direction)
 	else:
 		$Sprite.play("idle_" + last_direction)
+
+func _on_battle_trigger_body_entered(body: Node2D) -> void:
+	if body.is_in_group("player"):
+		start_battle()
+
+func start_battle():
+	var transition = preload(Scene.BATTLETRANSITION).instantiate()
+	add_child(transition)
+	
+	transition.play_enter_start(data.transition_sprite)

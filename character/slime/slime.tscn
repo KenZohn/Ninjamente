@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://d22hlx6kyq4vm"]
+
+[ext_resource type="PackedScene" uid="uid://bf74jlcnw8775" path="res://character/enemy.tscn" id="1_5xdio"]
+[ext_resource type="Resource" uid="uid://dgo12ekremuv" path="res://character/slime/slime_data.tres" id="2_xp66q"]
+[ext_resource type="SpriteFrames" uid="uid://05nki8ydexb5" path="res://character/slime/slime_sprite_frames.tres" id="3_wy54c"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8pq4b"]
+size = Vector2(14, 6)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xp66q"]
+size = Vector2(18, 10)
+
+[node name="Slime" unique_id=1903297482 instance=ExtResource("1_5xdio")]
+data = ExtResource("2_xp66q")
+
+[node name="Sprite" parent="." index="0" unique_id=923278743]
+sprite_frames = ExtResource("3_wy54c")
+
+[node name="Collision" parent="." index="1" unique_id=1658636845]
+shape = SubResource("RectangleShape2D_8pq4b")
+
+[node name="BattleCollision" parent="BattleTrigger" parent_id_path=PackedInt32Array(395901456) index="0" unique_id=1835138757]
+shape = SubResource("RectangleShape2D_xp66q")

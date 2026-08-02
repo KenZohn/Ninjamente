@@ -89,36 +89,39 @@ texture = SubResource("AtlasTexture_lcjiy")
 stretch_mode = 2
 
 [node name="Menu" type="Control" parent="." unique_id=345239701]
+layout_mode = 1
 anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = 24.0
+offset_top = 104.0
+offset_right = 104.0
+offset_bottom = 208.0
 
 [node name="AttackButton" parent="Menu" unique_id=1854637931 instance=ExtResource("5_4mnim")]
 layout_mode = 1
-offset_left = 32.0
-offset_top = 112.0
-offset_right = 96.0
-offset_bottom = 136.0
+offset_left = 8.0
+offset_top = 8.0
+offset_right = 72.0
+offset_bottom = 32.0
 
 [node name="Button" parent="Menu/AttackButton/Background" parent_id_path=PackedInt32Array(1854637931, 1797415584) index="0" unique_id=1518085031]
 text = "ATACAR"
 
 [node name="ItemButton" parent="Menu" unique_id=815310761 instance=ExtResource("5_4mnim")]
 layout_mode = 1
-offset_left = 32.0
-offset_top = 144.0
-offset_right = 96.0
-offset_bottom = 168.0
+offset_left = 8.0
+offset_top = 40.0
+offset_right = 72.0
+offset_bottom = 64.0
 
 [node name="Button" parent="Menu/ItemButton/Background" parent_id_path=PackedInt32Array(815310761, 1797415584) index="0" unique_id=1518085031]
 text = "ITEM"
 
 [node name="RunButton" parent="Menu" unique_id=218569428 instance=ExtResource("5_4mnim")]
 layout_mode = 1
-offset_left = 32.0
-offset_top = 176.0
-offset_right = 96.0
-offset_bottom = 200.0
+offset_left = 8.0
+offset_top = 72.0
+offset_right = 72.0
+offset_bottom = 96.0
 
 [node name="Button" parent="Menu/RunButton/Background" parent_id_path=PackedInt32Array(218569428, 1797415584) index="0" unique_id=1518085031]
 text = "FUGIR"
