@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://bodeicioqiecr"]
+
+[ext_resource type="PackedScene" uid="uid://bf74jlcnw8775" path="res://character/enemy.tscn" id="1_sv1rn"]
+[ext_resource type="Resource" uid="uid://bj5jivo1ye0og" path="res://character/snake/snake_data.tres" id="2_145i2"]
+[ext_resource type="SpriteFrames" uid="uid://dlcxcbatllrf2" path="res://character/snake/snake_sprite_frames.tres" id="2_oo4tf"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_145i2"]
+size = Vector2(14, 6)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4uavg"]
+size = Vector2(18, 10)
+
+[node name="Snake" unique_id=1903297482 instance=ExtResource("1_sv1rn")]
+data = ExtResource("2_145i2")
+
+[node name="Sprite" parent="." index="0" unique_id=923278743]
+sprite_frames = ExtResource("2_oo4tf")
+
+[node name="Collision" parent="." index="1" unique_id=1658636845]
+shape = SubResource("RectangleShape2D_145i2")
+
+[node name="BattleCollision" parent="BattleTrigger" parent_id_path=PackedInt32Array(395901456) index="0" unique_id=1835138757]
+shape = SubResource("RectangleShape2D_4uavg")

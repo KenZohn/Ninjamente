@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="EnemyData" format=3 uid="uid://dtr5t02sd56f4"]
+
+[ext_resource type="Script" uid="uid://byx6mom3s14re" path="res://character/enemy_data.gd" id="1_r6mrl"]
+[ext_resource type="Texture2D" uid="uid://buy0ck6veq26g" path="res://Ninja Adventure - Asset Pack/Actor/Monster/Racoon/SpriteSheet.png" id="2_6tlsx"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nbmgo"]
+atlas = ExtResource("2_6tlsx")
+region = Rect2(0, 0, 16, 16)
+
+[resource]
+script = ExtResource("1_r6mrl")
+name = "Racoon"
+max_hp = 8
+damage = 2
+transition_sprite = SubResource("AtlasTexture_nbmgo")

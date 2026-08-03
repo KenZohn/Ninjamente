@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://beck62mfy8sg8"]
+
+[ext_resource type="PackedScene" uid="uid://bf74jlcnw8775" path="res://character/enemy.tscn" id="1_w3sm5"]
+[ext_resource type="SpriteFrames" uid="uid://bad3wt02wf8ph" path="res://character/racoon/racoon_sprite_frames.tres" id="2_8iqpx"]
+[ext_resource type="Resource" uid="uid://dtr5t02sd56f4" path="res://character/racoon/racoon_data.tres" id="2_aage7"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_aage7"]
+size = Vector2(14, 6)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ja1dy"]
+size = Vector2(18, 10)
+
+[node name="Racoon" unique_id=1903297482 instance=ExtResource("1_w3sm5")]
+data = ExtResource("2_aage7")
+
+[node name="Sprite" parent="." index="0" unique_id=923278743]
+sprite_frames = ExtResource("2_8iqpx")
+
+[node name="Collision" parent="." index="1" unique_id=1658636845]
+shape = SubResource("RectangleShape2D_aage7")
+
+[node name="BattleCollision" parent="BattleTrigger" parent_id_path=PackedInt32Array(395901456) index="0" unique_id=1835138757]
+shape = SubResource("RectangleShape2D_ja1dy")
