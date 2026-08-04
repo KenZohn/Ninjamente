@@ -7,3 +7,8 @@ func _ready() -> void:
 	add_child(transition)
 	
 	transition.play_enter_end()
+	
+	set_sprite()
+
+func set_sprite():
+	$BattleFieldFrame/BattleField/EnemySpriteContainer/EnemySprite.texture = BattleManager.enemy_data.battle_sprite
