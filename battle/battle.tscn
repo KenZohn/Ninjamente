@@ -3,17 +3,8 @@
 [ext_resource type="Texture2D" uid="uid://ctojsw02fhs77" path="res://Ninja Adventure - Asset Pack/Ui/Theme/Wip/ThemeMetal2/nine_path_panel.png" id="1_6hnvb"]
 [ext_resource type="Script" uid="uid://d4jm6rueuwy3j" path="res://battle/battle.gd" id="1_l1kiu"]
 [ext_resource type="TileSet" uid="uid://c05q3kfbsmw4i" path="res://tileset.tres" id="2_4mnim"]
-[ext_resource type="Texture2D" uid="uid://7ggpu3xaaymf" path="res://Ninja Adventure - Asset Pack/Actor/Character/EggBoy/SeparateAnim/Idle.png" id="3_l1kiu"]
-[ext_resource type="Texture2D" uid="uid://bwlch0ul3ejsn" path="res://Ninja Adventure - Asset Pack/Actor/Monster/Slime/Slime.png" id="4_7fucf"]
+[ext_resource type="PackedScene" uid="uid://c6ttotfwimggv" path="res://battle/battle_character.tscn" id="4_4mnim"]
 [ext_resource type="PackedScene" uid="uid://da6lj5t2i3llm" path="res://battle/battle_menu_button.tscn" id="5_4mnim"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_lcjiy"]
-atlas = ExtResource("4_7fucf")
-region = Rect2(32, 0, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_mhv3b"]
-atlas = ExtResource("3_l1kiu")
-region = Rect2(48, 0, 16, 16)
 
 [node name="Battle" type="Control" unique_id=1618110637]
 layout_mode = 3
@@ -70,47 +61,19 @@ tile_set = ExtResource("2_4mnim")
 tile_map_data = PackedByteArray("AAAFAAAABQAQAAEAAAAGAAAABQARAAEAAAABAAAABQAQAAEAAAACAAAABQARAAEAAAAJAAAABQAQAAEAAAAKAAAABQARAAEAAAAEAAAAAwAFAAIAAAAAAAIAAwADAAIAAAALAAIAAwABAAIAAAA=")
 tile_set = ExtResource("2_4mnim")
 
-[node name="EnemySpriteContainer" type="Control" parent="BattleFieldFrame/BattleField" unique_id=13479102]
-anchors_preset = 0
-offset_left = 117.333
-offset_right = 160.0
-offset_bottom = 42.667
+[node name="Player" parent="BattleFieldFrame/BattleField" unique_id=71943644 instance=ExtResource("4_4mnim")]
+layout_mode = 0
+offset_left = 48.0
+offset_top = 42.666668
+offset_right = 48.0
+offset_bottom = 42.666668
 
-[node name="EnemySprite" type="TextureRect" parent="BattleFieldFrame/BattleField/EnemySpriteContainer" unique_id=103407934]
-layout_mode = 1
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -8.0
-offset_top = -16.0
-offset_right = 8.0
-grow_horizontal = 2
-grow_vertical = 0
-texture = SubResource("AtlasTexture_lcjiy")
-stretch_mode = 4
-
-[node name="PlayerSpriteContainer" type="Control" parent="BattleFieldFrame/BattleField" unique_id=511140301]
-anchors_preset = 0
-offset_left = 26.667
-offset_right = 69.334
-offset_bottom = 42.667
-
-[node name="PlayerSprite" type="TextureRect" parent="BattleFieldFrame/BattleField/PlayerSpriteContainer" unique_id=320864124]
-layout_mode = 1
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -8.000002
-offset_top = -16.0
-offset_right = 8.000002
-grow_horizontal = 2
-grow_vertical = 0
-texture = SubResource("AtlasTexture_mhv3b")
-stretch_mode = 4
+[node name="Enemy" parent="BattleFieldFrame/BattleField" unique_id=1861322966 instance=ExtResource("4_4mnim")]
+layout_mode = 0
+offset_left = 144.0
+offset_top = 42.666668
+offset_right = 144.0
+offset_bottom = 42.666668
 
 [node name="Menu" type="Control" parent="." unique_id=345239701]
 layout_mode = 1
@@ -149,6 +112,8 @@ offset_bottom = 96.0
 
 [node name="Button" parent="Menu/RunButton/Background" parent_id_path=PackedInt32Array(218569428, 1797415584) index="0" unique_id=1518085031]
 text = "FUGIR"
+
+[connection signal="pressed" from="Menu/AttackButton" to="." method="_on_attack_button_pressed"]
 
 [editable path="Menu/AttackButton"]
 [editable path="Menu/ItemButton"]

@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://c6ttotfwimggv"]
+
+[ext_resource type="Texture2D" uid="uid://7ggpu3xaaymf" path="res://Ninja Adventure - Asset Pack/Actor/Character/EggBoy/SeparateAnim/Idle.png" id="1_k7xrh"]
+[ext_resource type="Script" uid="uid://hy1rc5ib22h" path="res://battle/battle_character.gd" id="1_knleh"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_knleh"]
+atlas = ExtResource("1_k7xrh")
+region = Rect2(48, 0, 16, 16)
+
+[node name="BattleCharacter" type="Control" unique_id=71943644]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_knleh")
+
+[node name="Sprite" type="TextureRect" parent="." unique_id=324346045]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -8.000002
+offset_top = -16.0
+offset_right = 8.000002
+grow_horizontal = 2
+grow_vertical = 0
+texture = SubResource("AtlasTexture_knleh")
+stretch_mode = 4
