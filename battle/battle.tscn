@@ -5,6 +5,7 @@
 [ext_resource type="TileSet" uid="uid://c05q3kfbsmw4i" path="res://tileset.tres" id="2_4mnim"]
 [ext_resource type="PackedScene" uid="uid://c6ttotfwimggv" path="res://battle/battle_character.tscn" id="4_4mnim"]
 [ext_resource type="PackedScene" uid="uid://da6lj5t2i3llm" path="res://battle/battle_menu_button.tscn" id="5_4mnim"]
+[ext_resource type="PackedScene" uid="uid://oykvl3nckpaf" path="res://HUD/heart_bar.tscn" id="6_l1kiu"]
 
 [node name="Battle" type="Control" unique_id=1618110637]
 layout_mode = 3
@@ -113,7 +114,16 @@ offset_bottom = 96.0
 [node name="Button" parent="Menu/RunButton/Background" parent_id_path=PackedInt32Array(218569428, 1797415584) index="0" unique_id=1518085031]
 text = "FUGIR"
 
+[node name="HUD" type="CanvasLayer" parent="." unique_id=1258666827]
+
+[node name="HeartBar" parent="HUD" unique_id=851690184 instance=ExtResource("6_l1kiu")]
+offset_left = 7.0
+offset_top = 5.0
+offset_right = 7.0
+offset_bottom = 5.0
+
 [connection signal="pressed" from="Menu/AttackButton" to="." method="_on_attack_button_pressed"]
+[connection signal="pressed" from="Menu/RunButton" to="." method="_on_run_button_pressed"]
 
 [editable path="Menu/AttackButton"]
 [editable path="Menu/ItemButton"]

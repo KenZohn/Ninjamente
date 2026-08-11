@@ -1,7 +1,12 @@
 extends CharacterBody2D
 
+@export var data: PlayerData
+
 var speed = 70.0
 var last_direction = "down"
+
+func _ready():
+	BattleManager.player_data = data
 
 func _physics_process(_delta):
 	var direction = Input.get_vector(

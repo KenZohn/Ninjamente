@@ -15,6 +15,7 @@ region = Rect2(0, 0, 16, 16)
 script = ExtResource("1_3fcp3")
 name = "Snake"
 max_hp = 6
+current_hp = 6
 damage = 2
 battle_sprite = SubResource("AtlasTexture_s5p67")
 transition_sprite = SubResource("AtlasTexture_8eqbe")

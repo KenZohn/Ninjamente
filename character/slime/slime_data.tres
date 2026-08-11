@@ -15,6 +15,7 @@ region = Rect2(0, 0, 16, 15)
 script = ExtResource("1_v0f2g")
 name = "Slime"
 max_hp = 5
+current_hp = 5
 damage = 1
 battle_sprite = SubResource("AtlasTexture_tmkp5")
 transition_sprite = SubResource("AtlasTexture_v0f2g")

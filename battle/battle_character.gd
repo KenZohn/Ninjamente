@@ -2,7 +2,10 @@ extends Control
 
 const FLOATING_TEXT_SCENE = preload(Scene.FLOATINGTEXT)
 
-func setup(data):
+var data
+
+func setup(_data):
+	data = _data
 	$Sprite.texture = data.battle_sprite
 
 func show_text(text: String, type: String):
@@ -10,3 +13,8 @@ func show_text(text: String, type: String):
 	
 	add_child(floating_text)
 	await floating_text.play(text, type)
+
+func take_damage(amount: int):
+	data.current_hp = max(data.current_hp - amount, 0)
+	
+	await show_text(str(amount), "damage")
