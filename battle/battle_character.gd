@@ -1,5 +1,7 @@
 extends Control
 
+signal health_changed(current_hp: int)
+
 const FLOATING_TEXT_SCENE = preload(Scene.FLOATINGTEXT)
 
 var data
@@ -16,5 +18,7 @@ func show_text(text: String, type: String):
 
 func take_damage(amount: int):
 	data.current_hp = max(data.current_hp - amount, 0)
+	
+	health_changed.emit(data.current_hp)
 	
 	await show_text(str(amount), "damage")

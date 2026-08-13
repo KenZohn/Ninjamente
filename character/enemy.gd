@@ -53,7 +53,7 @@ func _on_battle_trigger_body_entered(body: Node2D) -> void:
 		start_battle()
 
 func start_battle():
-	BattleManager.enemy_data = data
+	BattleManager.enemy_data = data.duplicate()
 	
 	var transition = preload(Scene.BATTLETRANSITION).instantiate()
 	add_child(transition)
