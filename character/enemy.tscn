@@ -9,7 +9,7 @@ size = Vector2(14, 6)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_05lpe"]
 size = Vector2(18, 10)
 
-[node name="Enemy" type="CharacterBody2D" unique_id=1903297482]
+[node name="Enemy" type="CharacterBody2D" unique_id=1903297482 groups=["enemy"]]
 motion_mode = 1
 script = ExtResource("1_4gyqm")
 

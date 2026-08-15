@@ -2,7 +2,7 @@ extends Control
 
 signal health_changed(current_hp: int)
 
-const FLOATING_TEXT_SCENE = preload(Scene.FLOATINGTEXT)
+const FLOATING_TEXT_SCENE = preload(Scene.FLOATING_TEXT)
 
 var data
 

@@ -5,6 +5,8 @@ extends CharacterBody2D
 @export var speed := 40.0
 @export var data: EnemyData
 
+signal battle_requested(enemy)
+
 var last_direction = "down"
 var current_point := 0
 var waiting := false
@@ -53,9 +55,4 @@ func _on_battle_trigger_body_entered(body: Node2D) -> void:
 		start_battle()
 
 func start_battle():
-	BattleManager.enemy_data = data.duplicate()
-	
-	var transition = preload(Scene.BATTLETRANSITION).instantiate()
-	add_child(transition)
-	
-	transition.play_enter_start(data.transition_sprite)
+	battle_requested.emit(self)

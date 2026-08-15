@@ -1,7 +1,9 @@
-extends Control
+extends CanvasLayer
 
 @onready var player = $BattleFieldFrame/BattleField/Player
 @onready var enemy = $BattleFieldFrame/BattleField/Enemy
+
+signal battle_finished
 
 var player_data
 var enemy_data
@@ -20,22 +22,27 @@ func _ready() -> void:
 	$HUD/EnemyHealthBar.setup(enemy_data.max_hp, enemy_data.current_hp)
 	
 	$Menu/AttackButton/Background/Button.grab_focus()
-	
-	var transition = preload(Scene.BATTLETRANSITION).instantiate()
-	add_child(transition)
-	
-	transition.play_enter_end()
 
 func _on_attack_button_pressed() -> void:
 	set_menu_visible(false)
 	
 	await enemy.take_damage(player_data.damage)
+	
+	if enemy_data.current_hp <= 0:
+		enemy_defeated()
+		end_battle()
+		return
+	
 	await player.take_damage(enemy_data.damage)
+	
+	if player_data.current_hp <= 0:
+		end_battle()
+		return
 	
 	set_menu_visible(true)
 
 func _on_run_button_pressed() -> void:
-	get_tree().call_deferred("change_scene_to_file", Scene.MAP)
+	end_battle()
 
 func set_menu_visible(show_menu: bool):
 	$Menu/AttackButton.visible = show_menu
@@ -44,3 +51,11 @@ func set_menu_visible(show_menu: bool):
 	
 	if show_menu:
 		$Menu/AttackButton/Background/Button.grab_focus()
+
+func enemy_defeated():
+	BattleManager.current_enemy.queue_free()
+	BattleManager.current_enemy = null
+
+func end_battle():
+	battle_finished.emit()
+	queue_free()

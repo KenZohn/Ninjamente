@@ -62,6 +62,30 @@ tracks/0/keys = {
 "update": 0,
 "values": [Vector2(0, 0), Vector2(-384, 0)]
 }
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Banner:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(384, 88)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("EnemySpriteContainer:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(415.99997, 63.999996)]
+}
 
 [sub_resource type="Animation" id="Animation_6gl5q"]
 resource_name = "battle_enter_start"
@@ -85,10 +109,10 @@ tracks/1/path = NodePath("EnemySpriteContainer:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0.2, 0.4, 1.4, 1.6),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.2, 0.4, 1.4, 1.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 0,
-"values": [Vector2(415.99997, 63.999996), Vector2(184, 64), Vector2(136, 64), Vector2(-96, 64)]
+"values": [Vector2(415.99997, 63.999996), Vector2(415.99997, 63.999996), Vector2(184, 64), Vector2(136, 64), Vector2(-96, 64)]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
@@ -97,10 +121,10 @@ tracks/2/path = NodePath("Overlay:position")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(1.6, 1.8),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(0, 1.6, 1.8),
+"transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [Vector2(384, 0), Vector2(0, 0)]
+"values": [Vector2(384, 0), Vector2(384, 0), Vector2(0, 0)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_m8hmt"]
@@ -112,12 +136,13 @@ _data = {
 
 [node name="BattleTransition" type="CanvasLayer" unique_id=303283159]
 process_mode = 3
+layer = 4
 script = ExtResource("1_evem3")
 
 [node name="Banner" type="NinePatchRect" parent="." unique_id=1836042295]
 offset_left = 384.0
 offset_top = 88.0
-offset_right = 767.9995
+offset_right = 767.9994
 offset_bottom = 136.0
 texture = ExtResource("1_x5ere")
 region_rect = Rect2(6, 1, 4, 14)
@@ -128,7 +153,7 @@ patch_margin_bottom = 8
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_right = 0.0004272461
+offset_right = 0.00048828125
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 1)
@@ -138,7 +163,7 @@ layout_mode = 3
 anchors_preset = 0
 offset_left = 415.99997
 offset_top = 63.999996
-offset_right = 455.99994
+offset_right = 455.99997
 offset_bottom = 104.0
 scale = Vector2(1.6, 1.6)
 

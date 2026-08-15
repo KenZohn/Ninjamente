@@ -8,17 +8,20 @@
 [ext_resource type="PackedScene" uid="uid://oykvl3nckpaf" path="res://HUD/heart_bar.tscn" id="6_l1kiu"]
 [ext_resource type="PackedScene" uid="uid://bg56nbero43bt" path="res://HUD/health_bar.tscn" id="7_7fucf"]
 
-[node name="Battle" type="Control" unique_id=1618110637]
-layout_mode = 3
+[node name="Battle" type="CanvasLayer" unique_id=1187268120]
+process_mode = 3
+layer = 2
+script = ExtResource("1_l1kiu")
+
+[node name="Background" type="ColorRect" parent="." unique_id=976273051]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_l1kiu")
+color = Color(0, 0, 0, 1)
 
-[node name="Background" type="NinePatchRect" parent="." unique_id=84577616]
-layout_mode = 1
+[node name="Panel" type="NinePatchRect" parent="." unique_id=84577616]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -31,7 +34,6 @@ patch_margin_right = 8
 patch_margin_bottom = 8
 
 [node name="BattleFieldFrame" type="NinePatchRect" parent="." unique_id=1872254281]
-layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -78,7 +80,7 @@ offset_right = 144.0
 offset_bottom = 42.666668
 
 [node name="Menu" type="Control" parent="." unique_id=345239701]
-layout_mode = 1
+layout_mode = 3
 anchors_preset = 0
 offset_left = 24.0
 offset_top = 108.0
@@ -116,6 +118,7 @@ offset_bottom = 96.0
 text = "FUGIR"
 
 [node name="HUD" type="CanvasLayer" parent="." unique_id=1258666827]
+layer = 3
 
 [node name="PlayerHeartBar" parent="HUD" unique_id=851690184 instance=ExtResource("6_l1kiu")]
 offset_left = 7.0
