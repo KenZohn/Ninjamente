@@ -8,7 +8,7 @@ var data
 
 func setup(_data):
 	data = _data
-	$Sprite.texture = data.battle_sprite
+	$Visual/Sprite.texture = data.battle_sprite
 
 func show_text(text: String, type: String):
 	var floating_text = FLOATING_TEXT_SCENE.instantiate()
@@ -21,4 +21,14 @@ func take_damage(amount: int):
 	
 	health_changed.emit(data.current_hp)
 	
+	$AnimationPlayer.play("take_damage")
+	
 	await show_text(str(amount), "damage")
+
+func normal_attack():
+	$AnimationPlayer.play("normal_attack")
+	await $AnimationPlayer.animation_finished
+
+func normal_attack_end():
+	$AnimationPlayer.play("normal_attack_end")
+	await $AnimationPlayer.animation_finished

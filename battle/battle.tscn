@@ -79,6 +79,9 @@ offset_top = 42.666668
 offset_right = 144.0
 offset_bottom = 42.666668
 
+[node name="Visual" parent="BattleFieldFrame/BattleField/Enemy" index="0" unique_id=88210718]
+scale = Vector2(-1, 1)
+
 [node name="Menu" type="Control" parent="." unique_id=345239701]
 layout_mode = 3
 anchors_preset = 0
@@ -135,6 +138,7 @@ offset_bottom = 7.0
 [connection signal="pressed" from="Menu/AttackButton" to="." method="_on_attack_button_pressed"]
 [connection signal="pressed" from="Menu/RunButton" to="." method="_on_run_button_pressed"]
 
+[editable path="BattleFieldFrame/BattleField/Enemy"]
 [editable path="Menu/AttackButton"]
 [editable path="Menu/ItemButton"]
 [editable path="Menu/RunButton"]

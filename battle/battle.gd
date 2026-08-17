@@ -26,6 +26,8 @@ func _ready() -> void:
 func _on_attack_button_pressed() -> void:
 	set_menu_visible(false)
 	
+	await player.normal_attack()
+	player.normal_attack_end()
 	await enemy.take_damage(player_data.damage)
 	
 	if enemy_data.current_hp <= 0:
@@ -33,6 +35,8 @@ func _on_attack_button_pressed() -> void:
 		end_battle()
 		return
 	
+	await enemy.normal_attack()
+	enemy.normal_attack_end()
 	await player.take_damage(enemy_data.damage)
 	
 	if player_data.current_hp <= 0:
@@ -53,8 +57,9 @@ func set_menu_visible(show_menu: bool):
 		$Menu/AttackButton/Background/Button.grab_focus()
 
 func enemy_defeated():
-	BattleManager.current_enemy.queue_free()
-	BattleManager.current_enemy = null
+	if BattleManager.current_enemy:
+		BattleManager.current_enemy.queue_free()
+		BattleManager.current_enemy = null
 
 func end_battle():
 	battle_finished.emit()
