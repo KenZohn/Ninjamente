@@ -1,6 +1,6 @@
 [gd_scene format=4 uid="uid://byh0354vm1wa1"]
 
-[ext_resource type="Texture2D" uid="uid://ctojsw02fhs77" path="res://Ninja Adventure - Asset Pack/Ui/Theme/Wip/ThemeMetal2/nine_path_panel.png" id="1_6hnvb"]
+[ext_resource type="Texture2D" uid="uid://ctojsw02fhs77" path="res://asset/NinjaAdventure/Ui/Theme/Wip/ThemeMetal2/nine_path_panel.png" id="1_6hnvb"]
 [ext_resource type="Script" uid="uid://d4jm6rueuwy3j" path="res://battle/battle.gd" id="1_l1kiu"]
 [ext_resource type="TileSet" uid="uid://c05q3kfbsmw4i" path="res://tileset.tres" id="2_4mnim"]
 [ext_resource type="PackedScene" uid="uid://c6ttotfwimggv" path="res://battle/battle_character.tscn" id="4_4mnim"]

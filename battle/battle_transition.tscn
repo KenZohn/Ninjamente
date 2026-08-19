@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://4pyl0hyafnbw"]
 
 [ext_resource type="Script" uid="uid://dwquoplsljj68" path="res://battle/battle_transition.gd" id="1_evem3"]
-[ext_resource type="Texture2D" uid="uid://blmxqho38r32a" path="res://Ninja Adventure - Asset Pack/Ui/Theme/Wip/ThemeBamboo/nine_path_panel.png" id="1_x5ere"]
-[ext_resource type="Texture2D" uid="uid://bwlch0ul3ejsn" path="res://Ninja Adventure - Asset Pack/Actor/Monster/Slime/Slime.png" id="2_bs5tr"]
+[ext_resource type="Texture2D" uid="uid://blmxqho38r32a" path="res://asset/NinjaAdventure/Ui/Theme/Wip/ThemeBamboo/nine_path_panel.png" id="1_x5ere"]
+[ext_resource type="Texture2D" uid="uid://bwlch0ul3ejsn" path="res://asset/NinjaAdventure/Actor/Monster/Slime/Slime.png" id="2_bs5tr"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_evem3"]
 atlas = ExtResource("2_bs5tr")

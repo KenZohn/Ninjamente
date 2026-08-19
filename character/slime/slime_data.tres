@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="EnemyData" format=3 uid="uid://dgo12ekremuv"]
 
 [ext_resource type="Script" uid="uid://byx6mom3s14re" path="res://character/enemy_data.gd" id="1_v0f2g"]
-[ext_resource type="Texture2D" uid="uid://bwlch0ul3ejsn" path="res://Ninja Adventure - Asset Pack/Actor/Monster/Slime/Slime.png" id="2_tmkp5"]
+[ext_resource type="Texture2D" uid="uid://bwlch0ul3ejsn" path="res://asset/NinjaAdventure/Actor/Monster/Slime/Slime.png" id="2_tmkp5"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_tmkp5"]
 atlas = ExtResource("2_tmkp5")

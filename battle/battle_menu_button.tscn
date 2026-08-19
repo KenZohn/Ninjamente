@@ -1,9 +1,9 @@
 [gd_scene format=3 uid="uid://da6lj5t2i3llm"]
 
 [ext_resource type="Script" uid="uid://1an86fev67ct" path="res://battle/battle_menu_button.gd" id="1_mr6kt"]
-[ext_resource type="Texture2D" uid="uid://blmxqho38r32a" path="res://Ninja Adventure - Asset Pack/Ui/Theme/Wip/ThemeBamboo/nine_path_panel.png" id="2_g2ep1"]
-[ext_resource type="FontFile" uid="uid://b6bjyf243r3tb" path="res://Ninja Adventure - Asset Pack/Ui/Font/NormalFont.ttf" id="3_1riwo"]
-[ext_resource type="Texture2D" uid="uid://bvw8t20riaova" path="res://Ninja Adventure - Asset Pack/FX/Projectile/Shuriken.png" id="4_q5fg4"]
+[ext_resource type="Texture2D" uid="uid://blmxqho38r32a" path="res://asset/NinjaAdventure/Ui/Theme/Wip/ThemeBamboo/nine_path_panel.png" id="2_g2ep1"]
+[ext_resource type="FontFile" uid="uid://b6bjyf243r3tb" path="res://asset/NinjaAdventure/Ui/Font/NormalFont.ttf" id="3_1riwo"]
+[ext_resource type="Texture2D" uid="uid://bvw8t20riaova" path="res://asset/NinjaAdventure/FX/Projectile/Shuriken.png" id="4_q5fg4"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pfmtq"]
 bg_color = Color(0.6, 0.6, 0.6, 0)

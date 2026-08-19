@@ -1,12 +1,12 @@
 [gd_resource type="TileSet" format=3 uid="uid://c05q3kfbsmw4i"]
 
-[ext_resource type="Texture2D" uid="uid://ctsirlec1mvmw" path="res://Ninja Adventure - Asset Pack/Backgrounds/Tilesets/TilesetElement.png" id="1_7y6if"]
-[ext_resource type="Texture2D" uid="uid://s8qbsntaqkx4" path="res://Ninja Adventure - Asset Pack/Backgrounds/Tilesets/TilesetField.png" id="2_k61v0"]
-[ext_resource type="Texture2D" uid="uid://db455dqvl5jsp" path="res://Ninja Adventure - Asset Pack/Backgrounds/Tilesets/TilesetFloor.png" id="3_0gax6"]
-[ext_resource type="Texture2D" uid="uid://bsji5ljaxcrdx" path="res://Ninja Adventure - Asset Pack/Backgrounds/Tilesets/TilesetFloorDetail.png" id="4_rgbm4"]
-[ext_resource type="Texture2D" uid="uid://b6pmrrmy4vyj2" path="res://Ninja Adventure - Asset Pack/Backgrounds/Tilesets/TilesetHouse.png" id="5_jf1by"]
-[ext_resource type="Texture2D" uid="uid://ddwb3al7uqvw5" path="res://Ninja Adventure - Asset Pack/Backgrounds/Tilesets/TilesetNature.png" id="6_upfwc"]
-[ext_resource type="Texture2D" uid="uid://b0mwc1tnyok0g" path="res://Ninja Adventure - Asset Pack/Backgrounds/Tilesets/TilesetWater.png" id="7_ench2"]
+[ext_resource type="Texture2D" uid="uid://ctsirlec1mvmw" path="res://asset/NinjaAdventure/Backgrounds/Tilesets/TilesetElement.png" id="1_7y6if"]
+[ext_resource type="Texture2D" uid="uid://s8qbsntaqkx4" path="res://asset/NinjaAdventure/Backgrounds/Tilesets/TilesetField.png" id="2_k61v0"]
+[ext_resource type="Texture2D" uid="uid://db455dqvl5jsp" path="res://asset/NinjaAdventure/Backgrounds/Tilesets/TilesetFloor.png" id="3_0gax6"]
+[ext_resource type="Texture2D" uid="uid://bsji5ljaxcrdx" path="res://asset/NinjaAdventure/Backgrounds/Tilesets/TilesetFloorDetail.png" id="4_rgbm4"]
+[ext_resource type="Texture2D" uid="uid://b6pmrrmy4vyj2" path="res://asset/NinjaAdventure/Backgrounds/Tilesets/TilesetHouse.png" id="5_jf1by"]
+[ext_resource type="Texture2D" uid="uid://ddwb3al7uqvw5" path="res://asset/NinjaAdventure/Backgrounds/Tilesets/TilesetNature.png" id="6_upfwc"]
+[ext_resource type="Texture2D" uid="uid://b0mwc1tnyok0g" path="res://asset/NinjaAdventure/Backgrounds/Tilesets/TilesetWater.png" id="7_ench2"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ooc2g"]
 texture = ExtResource("1_7y6if")

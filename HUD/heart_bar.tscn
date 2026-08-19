@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://oykvl3nckpaf"]
 
 [ext_resource type="Script" uid="uid://cvglmrq3pifek" path="res://HUD/heart_bar.gd" id="1_4mt5i"]
-[ext_resource type="Texture2D" uid="uid://c3s60y7jcetkw" path="res://Ninja Adventure - Asset Pack/Ui/Receptacle/Heart.png" id="2_d5h5j"]
+[ext_resource type="Texture2D" uid="uid://c3s60y7jcetkw" path="res://asset/NinjaAdventure/Ui/Receptacle/Heart.png" id="2_d5h5j"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_v58qx"]
 atlas = ExtResource("2_d5h5j")

@@ -19,6 +19,8 @@ config/icon="res://icon.svg"
 
 Scene="*uid://mxo3vgi6nv40"
 BattleManager="*uid://clnu7v0ul72xf"
+AudioManager="*uid://dtlpt4erbhftf"
+Audio="*uid://5pxfrwlfokvh"
 
 [display]
 

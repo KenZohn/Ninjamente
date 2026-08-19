@@ -21,11 +21,13 @@ func take_damage(amount: int):
 	
 	health_changed.emit(data.current_hp)
 	
+	AudioManager.play_sound(Audio.TAKE_DAMAGE)
 	$AnimationPlayer.play("take_damage")
 	
 	await show_text(str(amount), "damage")
 
 func normal_attack():
+	AudioManager.play_sound(Audio.NORMAL_ATTACK)
 	$AnimationPlayer.play("normal_attack")
 	await $AnimationPlayer.animation_finished
 

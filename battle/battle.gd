@@ -26,6 +26,8 @@ func _ready() -> void:
 func _on_attack_button_pressed() -> void:
 	set_menu_visible(false)
 	
+	await get_tree().create_timer(0.2).timeout
+	
 	await player.normal_attack()
 	player.normal_attack_end()
 	await enemy.take_damage(player_data.damage)

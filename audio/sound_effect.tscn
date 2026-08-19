@@ -1,0 +1,3 @@
+[gd_scene format=3 uid="uid://c25hpisg11btd"]
+
+[node name="SoundEffect" type="AudioStreamPlayer" unique_id=2063529918]

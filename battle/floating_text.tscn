@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://d28ppwwslcq5o"]
 
 [ext_resource type="Script" uid="uid://bwfnrnf8roc4f" path="res://battle/floating_text.gd" id="1_888h4"]
-[ext_resource type="FontFile" uid="uid://b6bjyf243r3tb" path="res://Ninja Adventure - Asset Pack/Ui/Font/NormalFont.ttf" id="1_k03v2"]
+[ext_resource type="FontFile" uid="uid://b6bjyf243r3tb" path="res://asset/NinjaAdventure/Ui/Font/NormalFont.ttf" id="1_k03v2"]
 
 [sub_resource type="Animation" id="Animation_888h4"]
 length = 0.001
