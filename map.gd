@@ -4,6 +4,8 @@ const BATTLE_TRANSITION_SCENE = preload(Scene.BATTLE_TRANSITION)
 const BATTLE_SCENE = preload(Scene.BATTLE)
 
 func _ready():
+	AudioManager.play_bgm(Audio.MAP)
+	
 	$HUD/HeartBar.setup(BattleManager.player_data.max_hp, BattleManager.player_data.current_hp)
 	
 	for enemy in get_tree().get_nodes_in_group("enemy"):
@@ -28,6 +30,8 @@ func _on_battle_requested(enemy):
 	await battle_transition.play_enter_end()
 
 func _on_battle_finished():
+	AudioManager.play_bgm(Audio.MAP)
+	
 	$HUD/HeartBar.update_hearts(BattleManager.player_data.current_hp)
 	
 	get_tree().paused = false

@@ -9,6 +9,8 @@ var player_data
 var enemy_data
 
 func _ready() -> void:
+	AudioManager.play_bgm(Audio.BATTLE)
+	
 	player_data = BattleManager.player_data
 	enemy_data = BattleManager.enemy_data
 	

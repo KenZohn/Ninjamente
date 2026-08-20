@@ -10,3 +10,8 @@ func play_sound(sound_data: Dictionary):
 	audio.volume_db = sound_data.get("volume", 0.0)
 	audio.play()
 	audio.finished.connect(audio.queue_free)
+
+func play_bgm(music_data: Dictionary):
+	$BGM.stream = music_data["sound"]
+	$BGM.volume_db = music_data.get("volume", 0.0)
+	$BGM.play()
