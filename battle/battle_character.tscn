@@ -34,6 +34,21 @@ tracks/1/keys = {
 "values": [Color(1, 1, 1, 1)]
 }
 
+[sub_resource type="Animation" id="Animation_gws3v"]
+resource_name = "defeated"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Visual:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
 [sub_resource type="Animation" id="Animation_3oewm"]
 resource_name = "normal_attack"
 length = 0.25
@@ -109,6 +124,7 @@ tracks/0/keys = {
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_gws3v"]
 _data = {
 &"RESET": SubResource("Animation_knleh"),
+&"defeated": SubResource("Animation_gws3v"),
 &"normal_attack": SubResource("Animation_3oewm"),
 &"normal_attack_end": SubResource("Animation_tefqp"),
 &"take_damage": SubResource("Animation_c84p2")

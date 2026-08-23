@@ -1,0 +1,119 @@
+[gd_scene format=3 uid="uid://wmodcaf5td4k"]
+
+[ext_resource type="Script" uid="uid://btlliu1r0g5iu" path="res://battle/defeated_spirit.gd" id="1_q4tvw"]
+[ext_resource type="Texture2D" uid="uid://c7350htc63jph" path="res://asset/NinjaAdventure/Ui/Emote/emote3.png" id="1_s8pm0"]
+
+[sub_resource type="Animation" id="Animation_s8pm0"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Visual:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Visual:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Visual:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_q4tvw"]
+resource_name = "defeated"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Visual:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, -10), Vector2(0, -40)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Visual:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Visual:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1.2, 2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_n3g56"]
+_data = {
+&"RESET": SubResource("Animation_s8pm0"),
+&"defeated": SubResource("Animation_q4tvw")
+}
+
+[node name="DefeatedSpirit" type="Control" unique_id=919674318]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_q4tvw")
+
+[node name="Visual" type="Control" parent="." unique_id=496056878]
+anchors_preset = 0
+offset_top = -10.0
+offset_bottom = -10.0
+scale = Vector2(1e-05, 1e-05)
+
+[node name="Sprite" type="TextureRect" parent="Visual" unique_id=1153602338]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -7.0
+offset_top = -6.5
+offset_right = 7.0
+offset_bottom = 6.5
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_s8pm0")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=669728993]
+reset_on_save = false
+libraries/ = SubResource("AnimationLibrary_n3g56")

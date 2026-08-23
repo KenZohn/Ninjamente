@@ -34,3 +34,12 @@ func normal_attack():
 func normal_attack_end():
 	$AnimationPlayer.play("normal_attack_end")
 	await $AnimationPlayer.animation_finished
+
+func defeated():
+	AudioManager.play_sound(Audio.DEFEATED)
+	$AnimationPlayer.play("defeated")
+	
+	var spirit = preload(Scene.DEFEATED_SPIRIT).instantiate()
+	
+	add_child(spirit)
+	await spirit.play()
