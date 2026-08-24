@@ -15,3 +15,6 @@ func play_bgm(music_data: Dictionary):
 	$BGM.stream = music_data["sound"]
 	$BGM.volume_db = music_data.get("volume", 0.0)
 	$BGM.play()
+
+func stop_bgm():
+	$BGM.stop()

@@ -36,6 +36,7 @@ func _on_attack_button_pressed() -> void:
 	
 	if enemy_data.current_hp <= 0:
 		await enemy_defeated()
+		await show_reward()
 		end_battle()
 		return
 	
@@ -70,3 +71,9 @@ func enemy_defeated():
 func end_battle():
 	battle_finished.emit()
 	queue_free()
+
+func show_reward():
+	var reward_screen = preload(Scene.REWARD_SCREEN).instantiate()
+	add_child(reward_screen)
+	
+	await reward_screen.continue_pressed

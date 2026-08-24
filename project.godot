@@ -33,6 +33,10 @@ window/stretch/mode="canvas_items"
 player=""
 enemy=""
 
+[gui]
+
+theme/custom_font="uid://b6bjyf243r3tb"
+
 [input]
 
 move_up={
