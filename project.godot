@@ -21,6 +21,7 @@ Scene="*uid://mxo3vgi6nv40"
 BattleManager="*uid://clnu7v0ul72xf"
 AudioManager="*uid://dtlpt4erbhftf"
 Audio="*uid://5pxfrwlfokvh"
+GameManager="*uid://dsm701jg5g8jx"
 
 [display]
 

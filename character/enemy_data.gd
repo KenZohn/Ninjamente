@@ -7,3 +7,4 @@ class_name EnemyData
 @export var damage: int
 @export var battle_sprite: Texture2D
 @export var transition_sprite: Texture2D
+@export var coin_reward: int = 0

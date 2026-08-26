@@ -64,6 +64,8 @@ func set_menu_visible(show_menu: bool):
 func enemy_defeated():
 	await enemy.defeated()
 	
+	GameManager.coins += enemy_data.coin_reward
+	
 	if BattleManager.current_enemy:
 		BattleManager.current_enemy.queue_free()
 		BattleManager.current_enemy = null
@@ -75,5 +77,7 @@ func end_battle():
 func show_reward():
 	var reward_screen = preload(Scene.REWARD_SCREEN).instantiate()
 	add_child(reward_screen)
+	
+	reward_screen.update_values(0, enemy_data.coin_reward)
 	
 	await reward_screen.continue_pressed

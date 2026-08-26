@@ -7,6 +7,7 @@ func _ready():
 	AudioManager.play_bgm(Audio.MAP)
 	
 	$HUD/HeartBar.setup(BattleManager.player_data.max_hp, BattleManager.player_data.current_hp)
+	$HUD/CoinCounter.update_coins(GameManager.coins)
 	
 	for enemy in get_tree().get_nodes_in_group("enemy"):
 		enemy.battle_requested.connect(_on_battle_requested)
@@ -33,5 +34,6 @@ func _on_battle_finished():
 	AudioManager.play_bgm(Audio.MAP)
 	
 	$HUD/HeartBar.update_hearts(BattleManager.player_data.current_hp)
+	$HUD/CoinCounter.update_coins(GameManager.coins)
 	
 	get_tree().paused = false

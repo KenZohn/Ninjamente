@@ -1,0 +1,36 @@
+[gd_scene format=3 uid="uid://ciqngl0l2rats"]
+
+[ext_resource type="Texture2D" uid="uid://dwmheh4uldjau" path="res://asset/NinjaAdventure/Ui/Theme/Wip/ThemeWood2/nine_path_panel.png" id="1_sr2e4"]
+[ext_resource type="Script" uid="uid://bh88s1cbujtq0" path="res://HUD/coin_counter.gd" id="2_1r7jq"]
+[ext_resource type="Texture2D" uid="uid://bk6ilynotagq7" path="res://asset/NinjaAdventure/Items/Object/MoneyBag.png" id="3_f42a3"]
+
+[node name="CoinCounter" type="NinePatchRect" unique_id=1690494180]
+offset_right = 62.0
+offset_bottom = 26.0
+texture = ExtResource("1_sr2e4")
+patch_margin_left = 8
+patch_margin_top = 8
+patch_margin_right = 8
+patch_margin_bottom = 8
+script = ExtResource("2_1r7jq")
+
+[node name="Icon" type="TextureRect" parent="." unique_id=712487198]
+layout_mode = 0
+offset_left = 44.0
+offset_top = 7.0
+offset_right = 56.0
+offset_bottom = 19.0
+texture = ExtResource("3_f42a3")
+expand_mode = 1
+
+[node name="Label" type="Label" parent="." unique_id=355558484]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 5.0
+offset_right = 41.0
+offset_bottom = 20.0
+theme_override_constants/outline_size = 3
+theme_override_font_sizes/font_size = 10
+text = "0"
+horizontal_alignment = 2
+vertical_alignment = 1

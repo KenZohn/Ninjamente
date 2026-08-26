@@ -19,3 +19,4 @@ current_hp = 5
 damage = 1
 battle_sprite = SubResource("AtlasTexture_tmkp5")
 transition_sprite = SubResource("AtlasTexture_v0f2g")
+coin_reward = 2
