@@ -20,3 +20,4 @@ damage = 2
 battle_sprite = SubResource("AtlasTexture_6tlsx")
 transition_sprite = SubResource("AtlasTexture_nbmgo")
 coin_reward = 5
+xp_reward = 8

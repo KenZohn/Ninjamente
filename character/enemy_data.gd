@@ -8,3 +8,4 @@ class_name EnemyData
 @export var battle_sprite: Texture2D
 @export var transition_sprite: Texture2D
 @export var coin_reward: int = 0
+@export var xp_reward: int = 0

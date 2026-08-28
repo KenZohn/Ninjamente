@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://beck62mfy8sg8" path="res://character/racoon/racoon.tscn" id="5_urblq"]
 [ext_resource type="PackedScene" uid="uid://oykvl3nckpaf" path="res://HUD/heart_bar.tscn" id="7_05x41"]
 [ext_resource type="PackedScene" uid="uid://ciqngl0l2rats" path="res://HUD/coin_counter.tscn" id="8_05x41"]
+[ext_resource type="PackedScene" uid="uid://c1flw4vn08pco" path="res://HUD/xp_bar.tscn" id="9_gqbix"]
 
 [node name="Map" type="Node2D" unique_id=1616608128]
 y_sort_enabled = true
@@ -71,3 +72,9 @@ offset_left = 318.0
 offset_top = 4.0
 offset_right = 380.0
 offset_bottom = 30.0
+
+[node name="XPBar" parent="HUD" unique_id=1083167634 instance=ExtResource("9_gqbix")]
+offset_left = 230.0
+offset_top = 10.0
+offset_right = 290.0
+offset_bottom = 28.0

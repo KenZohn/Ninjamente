@@ -1,0 +1,68 @@
+[gd_scene format=3 uid="uid://c1flw4vn08pco"]
+
+[ext_resource type="Texture2D" uid="uid://br8vgt6kkamt6" path="res://asset/NinjaAdventure/Ui/Theme/Wip/ThemeMetal/nine_path_panel.png" id="1_wwkfi"]
+[ext_resource type="Script" uid="uid://c7flxkijihyss" path="res://HUD/xp_bar.gd" id="2_4fi06"]
+[ext_resource type="Texture2D" uid="uid://cmr3e785uxab0" path="res://asset/NinjaAdventure/Ui/Theme/Wip/ThemeBubble/nine_path_panel.png" id="2_rbgbs"]
+
+[node name="XPBar" type="NinePatchRect" unique_id=1083167634]
+offset_right = 60.0
+offset_bottom = 18.0
+texture = ExtResource("1_wwkfi")
+patch_margin_left = 8
+patch_margin_top = 8
+patch_margin_right = 8
+patch_margin_bottom = 8
+script = ExtResource("2_4fi06")
+
+[node name="Fill" type="ColorRect" parent="." unique_id=1742904925]
+layout_mode = 0
+offset_left = 55.0
+offset_top = 5.0
+offset_right = 80.0
+offset_bottom = 13.0
+scale = Vector2(-1, 1)
+color = Color(0.28627452, 0.68235296, 0.34117648, 1)
+
+[node name="XPPercentage" type="Label" parent="." unique_id=1001852221]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 3.0
+offset_right = 41.0
+offset_bottom = 14.0
+theme_override_font_sizes/font_size = 8
+text = "100%"
+horizontal_alignment = 1
+
+[node name="LevelIcon" type="NinePatchRect" parent="." unique_id=885084872]
+layout_mode = 0
+offset_left = 43.0
+offset_top = -6.0
+offset_right = 76.0
+offset_bottom = 8.0
+texture = ExtResource("2_rbgbs")
+patch_margin_left = 8
+patch_margin_top = 7
+patch_margin_right = 8
+patch_margin_bottom = 7
+
+[node name="LevelLabel" type="Label" parent="LevelIcon" unique_id=166276084]
+layout_mode = 0
+offset_left = 4.0
+offset_top = 4.0
+offset_right = 17.0
+offset_bottom = 12.0
+theme_override_colors/font_color = Color(0, 0.8, 0.35686275, 1)
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 5
+text = "LV"
+
+[node name="LevelValue" type="Label" parent="LevelIcon" unique_id=2010689325]
+layout_mode = 0
+offset_left = 14.0
+offset_top = 1.0
+offset_right = 30.0
+offset_bottom = 12.0
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 8
+text = "100"
+horizontal_alignment = 1

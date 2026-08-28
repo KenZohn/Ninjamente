@@ -8,6 +8,7 @@ func _ready():
 	
 	$HUD/HeartBar.setup(BattleManager.player_data.max_hp, BattleManager.player_data.current_hp)
 	$HUD/CoinCounter.update_coins(GameManager.coins)
+	$HUD/XPBar.update_xp_bar(GameManager.current_xp, GameManager.next_level_xp, GameManager.level)
 	
 	for enemy in get_tree().get_nodes_in_group("enemy"):
 		enemy.battle_requested.connect(_on_battle_requested)
@@ -35,5 +36,6 @@ func _on_battle_finished():
 	
 	$HUD/HeartBar.update_hearts(BattleManager.player_data.current_hp)
 	$HUD/CoinCounter.update_coins(GameManager.coins)
+	$HUD/XPBar.update_xp_bar(GameManager.current_xp, GameManager.next_level_xp, GameManager.level)
 	
 	get_tree().paused = false
