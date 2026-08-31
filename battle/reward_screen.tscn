@@ -4,10 +4,48 @@
 [ext_resource type="Texture2D" uid="uid://ftg8823uuovg" path="res://asset/NinjaAdventure/Ui/Theme/Wip/ThemeWood3/nine_path_panel.png" id="2_50in7"]
 [ext_resource type="Texture2D" uid="uid://c2xrftiu14ht4" path="res://asset/NinjaAdventure/Items/Treasure/Coin2.png" id="3_2ghsa"]
 [ext_resource type="PackedScene" uid="uid://da6lj5t2i3llm" path="res://battle/battle_menu_button.tscn" id="4_j8ftl"]
+[ext_resource type="Texture2D" uid="uid://cmr3e785uxab0" path="res://asset/NinjaAdventure/Ui/Theme/Wip/ThemeBubble/nine_path_panel.png" id="5_j8ftl"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_23ei3"]
 atlas = ExtResource("3_2ghsa")
 region = Rect2(0, 0, 10, 10)
+
+[sub_resource type="Animation" id="Animation_23ei3"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("LevelUpIcon:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_3kmcb"]
+resource_name = "level_up"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("LevelUpIcon:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(1.2, 1.2), Vector2(1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_cqcj2"]
+_data = {
+&"RESET": SubResource("Animation_23ei3"),
+&"level_up": SubResource("Animation_3kmcb")
+}
 
 [node name="RewardScreen" type="CanvasLayer" unique_id=1872588013]
 layer = 4
@@ -137,6 +175,48 @@ offset_bottom = 108.0
 
 [node name="Button" parent="Background/ContinueButton/Background" parent_id_path=PackedInt32Array(1854637931, 1797415584) index="0" unique_id=1518085031]
 text = "CONTINUAR"
+
+[node name="LevelUpIcon" type="Control" parent="." unique_id=1177915536]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_left = 296.0
+offset_top = 99.0
+offset_right = 296.0
+offset_bottom = 99.0
+
+[node name="Background" type="NinePatchRect" parent="LevelUpIcon" unique_id=1220436863]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -40.0
+offset_top = -11.0
+offset_right = 40.0
+offset_bottom = 11.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("5_j8ftl")
+patch_margin_left = 8
+patch_margin_top = 8
+patch_margin_right = 8
+patch_margin_bottom = 8
+
+[node name="LevelLabel" type="Label" parent="LevelUpIcon/Background" unique_id=1004461572]
+layout_mode = 0
+offset_left = 9.0
+offset_top = 2.0
+offset_right = 72.0
+offset_bottom = 19.0
+theme_override_colors/font_color = Color(0, 0.8, 0.35686275, 1)
+theme_override_constants/outline_size = 3
+theme_override_font_sizes/font_size = 10
+text = "LEVEL UP!"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1930497747]
+libraries/ = SubResource("AnimationLibrary_cqcj2")
 
 [connection signal="pressed" from="Background/ContinueButton" to="." method="_on_continue_button_pressed"]
 

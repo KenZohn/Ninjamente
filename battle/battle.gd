@@ -8,6 +8,8 @@ signal battle_finished
 var player_data
 var enemy_data
 
+var leveled_up = false
+
 func _ready() -> void:
 	AudioManager.play_bgm(Audio.BATTLE)
 	
@@ -65,7 +67,7 @@ func enemy_defeated():
 	await enemy.defeated()
 	
 	GameManager.coins += enemy_data.coin_reward
-	GameManager.add_xp(enemy_data.xp_reward)
+	leveled_up = GameManager.add_xp(enemy_data.xp_reward)
 	
 	if BattleManager.current_enemy:
 		BattleManager.current_enemy.queue_free()
@@ -79,6 +81,6 @@ func show_reward():
 	var reward_screen = preload(Scene.REWARD_SCREEN).instantiate()
 	add_child(reward_screen)
 	
-	reward_screen.update_values(enemy_data.xp_reward, enemy_data.coin_reward)
+	reward_screen.show_reward(enemy_data.xp_reward, enemy_data.coin_reward, leveled_up)
 	
 	await reward_screen.continue_pressed

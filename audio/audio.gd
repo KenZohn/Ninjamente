@@ -36,6 +36,11 @@ const VICTORY =  {
 	"volume": 0.0
 }
 
+const LEVEL_UP =  {
+	"sound": preload("res://asset/NinjaAdventure/Audio/Jingles/LevelUp1.wav"),
+	"volume": 0.0
+}
+
 # Music
 const MAP = {
 	"sound": preload("res://asset/NinjaAdventure/Audio/Musics/31 - Sunny.ogg"),
