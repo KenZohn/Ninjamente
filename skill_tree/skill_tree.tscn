@@ -1,0 +1,45 @@
+[gd_scene format=3 uid="uid://ckr56vdp011hf"]
+
+[ext_resource type="Script" uid="uid://b6vxcdjjbdu33" path="res://skill_tree/skill_tree.gd" id="1_mixf3"]
+[ext_resource type="Texture2D" uid="uid://bdum3hkj8shmy" path="res://asset/NinjaAdventure/Ui/Theme/Wip/ThemeRed/nine_path_panel.png" id="1_x57a4"]
+[ext_resource type="PackedScene" uid="uid://dqjfr5lrriuk8" path="res://input/input_hint.tscn" id="2_mixf3"]
+
+[node name="SkillTree" type="CanvasLayer" unique_id=1382315727]
+process_mode = 3
+layer = 2
+script = ExtResource("1_mixf3")
+
+[node name="Background" type="ColorRect" parent="." unique_id=789334259]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Panel" type="NinePatchRect" parent="." unique_id=1917678435]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_x57a4")
+patch_margin_left = 8
+patch_margin_top = 8
+patch_margin_right = 8
+patch_margin_bottom = 8
+
+[node name="ConfirmHint" parent="." unique_id=165975171 instance=ExtResource("2_mixf3")]
+offset_left = 128.0
+offset_top = 192.0
+offset_right = 187.0
+offset_bottom = 208.0
+text = "OBTER"
+
+[node name="CancelHint" parent="." unique_id=2036804904 instance=ExtResource("2_mixf3")]
+offset_left = 16.0
+offset_top = 192.0
+offset_right = 84.0
+offset_bottom = 208.0
+action = "cancel"
+text = "VOLTAR"

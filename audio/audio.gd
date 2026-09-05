@@ -41,6 +41,16 @@ const LEVEL_UP =  {
 	"volume": 0.0
 }
 
+const CONFIRM =  {
+	"sound": preload("res://asset/NinjaAdventure/Audio/Sounds/Menu/Accept6.wav"),
+	"volume": 2.0
+}
+
+const CANCEL =  {
+	"sound": preload("res://asset/NinjaAdventure/Audio/Sounds/Menu/Cancel.wav"),
+	"volume": 4.0
+}
+
 # Music
 const MAP = {
 	"sound": preload("res://asset/NinjaAdventure/Audio/Musics/31 - Sunny.ogg"),

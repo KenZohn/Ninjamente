@@ -2,6 +2,9 @@ extends Node
 
 const SOUND_EFFECT_SCENE = preload(Scene.SOUND_EFFECT)
 
+func _ready() -> void:
+	process_mode = Node.PROCESS_MODE_ALWAYS
+
 func play_sound(sound_data: Dictionary):
 	var audio = SOUND_EFFECT_SCENE.instantiate()
 	add_child(audio)

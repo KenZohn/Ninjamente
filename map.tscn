@@ -9,6 +9,8 @@
 [ext_resource type="PackedScene" uid="uid://oykvl3nckpaf" path="res://HUD/heart_bar.tscn" id="7_05x41"]
 [ext_resource type="PackedScene" uid="uid://ciqngl0l2rats" path="res://HUD/coin_counter.tscn" id="8_05x41"]
 [ext_resource type="PackedScene" uid="uid://c1flw4vn08pco" path="res://HUD/xp_bar.tscn" id="9_gqbix"]
+[ext_resource type="PackedScene" uid="uid://dqjfr5lrriuk8" path="res://input/input_hint.tscn" id="10_oysan"]
+[ext_resource type="Texture2D" uid="uid://h2bye8nasxw3" path="res://asset/NinjaAdventure/Items/Object/Book.png" id="11_sb2pt"]
 
 [node name="Map" type="Node2D" unique_id=1616608128]
 y_sort_enabled = true
@@ -78,3 +80,11 @@ offset_left = 230.0
 offset_top = 10.0
 offset_right = 290.0
 offset_bottom = 28.0
+
+[node name="SkillTreeHint" parent="HUD" unique_id=165975171 instance=ExtResource("10_oysan")]
+offset_left = 343.0
+offset_top = 34.0
+offset_right = 379.0
+offset_bottom = 50.0
+action = "skill"
+icon = ExtResource("11_sb2pt")

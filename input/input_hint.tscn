@@ -1,0 +1,36 @@
+[gd_scene format=3 uid="uid://dqjfr5lrriuk8"]
+
+[ext_resource type="Script" uid="uid://dda7ijgv6ymxc" path="res://input/input_hint.gd" id="1_27xpp"]
+[ext_resource type="Texture2D" uid="uid://fcipglveiiax" path="res://asset/NinjaAdventure/Ui/Input/Keyboard/KeyZ.png" id="1_tvbu3"]
+[ext_resource type="Texture2D" uid="uid://h2bye8nasxw3" path="res://asset/NinjaAdventure/Items/Object/Book.png" id="2_27xpp"]
+
+[node name="InputHint" type="HBoxContainer" unique_id=165975171]
+offset_right = 25.0
+offset_bottom = 16.0
+script = ExtResource("1_27xpp")
+
+[node name="IconContainer" type="Control" parent="." unique_id=1994192587]
+custom_minimum_size = Vector2(16, 16)
+layout_mode = 2
+
+[node name="InputIcon" type="TextureRect" parent="IconContainer" unique_id=2034413029]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_tvbu3")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="." unique_id=636400592]
+layout_mode = 2
+theme_override_constants/outline_size = 3
+theme_override_font_sizes/font_size = 10
+text = "ACTION"
+
+[node name="ActionIcon" type="TextureRect" parent="." unique_id=1688142388]
+visible = false
+layout_mode = 2
+texture = ExtResource("2_27xpp")

@@ -22,17 +22,16 @@ func _physics_process(_delta):
 
 func update_animation(direction: Vector2):
 	if direction != Vector2.ZERO:
-		if direction.y < 0:
-			$Sprite.play("walk_up")
-			last_direction = "up"
-		elif direction.y > 0:
-			$Sprite.play("walk_down")
-			last_direction = "down"
-		elif direction.x < 0:
-			$Sprite.play("walk_left")
-			last_direction = "left"
-		elif direction.x > 0:
-			$Sprite.play("walk_right")
-			last_direction = "right"
+		if abs(direction.x) > abs(direction.y):
+			if direction.x > 0:
+				last_direction = "right"
+			else:
+				last_direction = "left"
+		else:
+			if direction.y > 0:
+				last_direction = "down"
+			else:
+				last_direction = "up"
+		$Sprite.play("walk_" + last_direction)
 	else:
 		$Sprite.play("idle_" + last_direction)
