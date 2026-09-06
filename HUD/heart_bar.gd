@@ -11,6 +11,9 @@ func setup(max_hp: int, current_hp: int):
 	update_hearts(current_hp)
 
 func create_hearts(total_hearts: int):
+	for child in get_children():
+		child.free()
+	
 	for i in total_hearts:
 		var heart := TextureRect.new()
 		heart.expand_mode = TextureRect.EXPAND_KEEP_SIZE

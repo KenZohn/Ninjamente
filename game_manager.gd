@@ -4,6 +4,7 @@ var coins: int = 0
 var level = 1
 var current_xp: int = 0
 var next_level_xp: int = 10
+var skill_points: int = 2
 
 func add_xp(amount: int):
 	var leveled_up = false
@@ -16,8 +17,7 @@ func add_xp(amount: int):
 		next_level_xp = calculate_next_level_xp(level)
 		leveled_up = true
 		
-		# Provisório
-		BattleManager.player_data.damage += 1
+		skill_points += 1
 		BattleManager.player_data.current_hp = BattleManager.player_data.max_hp
 	
 	return leveled_up

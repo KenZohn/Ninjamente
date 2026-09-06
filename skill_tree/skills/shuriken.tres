@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="SkillData" format=3 uid="uid://bc6x3xqt43sdi"]
+
+[ext_resource type="Script" uid="uid://6lp4pvojo4bg" path="res://skill_tree/skill_data.gd" id="1_bbui1"]
+[ext_resource type="Texture2D" uid="uid://dgjsa264br0yv" path="res://asset/NinjaAdventure/Ui/Skill Icon/Items & Weapon/Shuriken.png" id="1_jq6s2"]
+[ext_resource type="Texture2D" uid="uid://i2jr8dtg04hw" path="res://asset/NinjaAdventure/Ui/Skill Icon/Items & Weapon/ShurikenDisabled.png" id="2_6sveg"]
+
+[resource]
+script = ExtResource("1_bbui1")
+skill_name = "SHURIKEN"
+description = "CAUSA    O    DOBRO    DO    DANO    BASE    AO    INIMIGO"
+icon = ExtResource("1_jq6s2")
+locked_icon = ExtResource("2_6sveg")
+effect = 2
+value = 1

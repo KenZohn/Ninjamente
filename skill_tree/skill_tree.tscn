@@ -3,6 +3,12 @@
 [ext_resource type="Script" uid="uid://b6vxcdjjbdu33" path="res://skill_tree/skill_tree.gd" id="1_mixf3"]
 [ext_resource type="Texture2D" uid="uid://bdum3hkj8shmy" path="res://asset/NinjaAdventure/Ui/Theme/Wip/ThemeRed/nine_path_panel.png" id="1_x57a4"]
 [ext_resource type="PackedScene" uid="uid://dqjfr5lrriuk8" path="res://input/input_hint.tscn" id="2_mixf3"]
+[ext_resource type="PackedScene" uid="uid://b2blqyur4otpa" path="res://skill_tree/skill.tscn" id="3_86svx"]
+[ext_resource type="Resource" uid="uid://bqvyxluwgkfbt" path="res://skill_tree/skills/increase_hp.tres" id="4_0g56x"]
+[ext_resource type="Resource" uid="uid://cy1kbc17esn2i" path="res://skill_tree/skills/increase_damage.tres" id="5_8kxff"]
+[ext_resource type="Resource" uid="uid://bc6x3xqt43sdi" path="res://skill_tree/skills/shuriken.tres" id="6_g80xd"]
+[ext_resource type="Texture2D" uid="uid://ftg8823uuovg" path="res://asset/NinjaAdventure/Ui/Theme/Wip/ThemeWood3/nine_path_panel.png" id="7_xm5qy"]
+[ext_resource type="Texture2D" uid="uid://bi0dhc1hnq2x8" path="res://asset/NinjaAdventure/Ui/Theme/Wip/ThemeDark/nine_path_panel.png" id="8_2b7yj"]
 
 [node name="SkillTree" type="CanvasLayer" unique_id=1382315727]
 process_mode = 3
@@ -29,12 +35,182 @@ patch_margin_top = 8
 patch_margin_right = 8
 patch_margin_bottom = 8
 
-[node name="ConfirmHint" parent="." unique_id=165975171 instance=ExtResource("2_mixf3")]
-offset_left = 128.0
-offset_top = 192.0
-offset_right = 187.0
+[node name="SkillArea" type="Control" parent="." unique_id=1755944427]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 16.0
+offset_top = 16.0
+offset_right = 248.0
+offset_bottom = 184.0
+
+[node name="Skills" type="Control" parent="SkillArea" unique_id=578831774]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="IncreaseMaxHP01" parent="SkillArea/Skills" unique_id=332373455 instance=ExtResource("3_86svx")]
+layout_mode = 0
+offset_left = -15.0
+offset_top = -15.0
+offset_right = 15.0
+offset_bottom = 15.0
+id = "IncreaseMaxHP01"
+data = ExtResource("4_0g56x")
+state = 1
+
+[node name="IncreaseMaxHP02" parent="SkillArea/Skills" unique_id=761207558 instance=ExtResource("3_86svx")]
+layout_mode = 0
+offset_left = 97.0
+offset_top = -15.0
+offset_right = 127.0
+offset_bottom = 15.0
+id = "IncreaseMaxHP02"
+data = ExtResource("4_0g56x")
+state = 1
+
+[node name="IncreaseDamage01" parent="SkillArea/Skills" unique_id=584826683 instance=ExtResource("3_86svx")]
+layout_mode = 0
+offset_left = 41.0
+offset_top = -71.0
+offset_right = 71.0
+offset_bottom = -41.0
+id = "IncreaseDamage01"
+data = ExtResource("5_8kxff")
+state = 1
+
+[node name="IncreaseDamage02" parent="SkillArea/Skills" unique_id=2122716591 instance=ExtResource("3_86svx")]
+layout_mode = 0
+offset_left = 41.0
+offset_top = -15.0
+offset_right = 71.0
+offset_bottom = 15.0
+id = "IncreaseDamage02"
+data = ExtResource("5_8kxff")
+state = 1
+
+[node name="Shuriken01" parent="SkillArea/Skills" unique_id=1357848531 instance=ExtResource("3_86svx")]
+layout_mode = 0
+offset_left = 97.0
+offset_top = -71.0
+offset_right = 127.0
+offset_bottom = -41.0
+id = "Shuriken01"
+data = ExtResource("6_g80xd")
+
+[node name="SkillPoints" type="NinePatchRect" parent="." unique_id=1263453004]
+offset_left = 304.0
+offset_top = 16.0
+offset_right = 368.0
+offset_bottom = 56.0
+texture = ExtResource("7_xm5qy")
+patch_margin_left = 8
+patch_margin_top = 8
+patch_margin_right = 8
+patch_margin_bottom = 8
+
+[node name="Label" type="Label" parent="SkillPoints" unique_id=2004590346]
+layout_mode = 0
+offset_left = 6.0
+offset_top = 6.0
+offset_right = 59.0
+offset_bottom = 17.0
+theme_override_constants/outline_size = 3
+theme_override_font_sizes/font_size = 8
+text = "PONTOS"
+horizontal_alignment = 1
+
+[node name="Value" type="Label" parent="SkillPoints" unique_id=1155058242]
+layout_mode = 0
+offset_left = 6.0
+offset_top = 17.0
+offset_right = 59.0
+offset_bottom = 35.0
+theme_override_colors/font_color = Color(0.3137255, 0.8352941, 0.49019608, 1)
+theme_override_constants/outline_size = 3
+theme_override_font_sizes/font_size = 12
+text = "1"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Description" type="NinePatchRect" parent="." unique_id=1029352875]
+offset_left = 256.0
+offset_top = 72.0
+offset_right = 368.0
 offset_bottom = 208.0
+texture = ExtResource("7_xm5qy")
+patch_margin_left = 8
+patch_margin_top = 8
+patch_margin_right = 8
+patch_margin_bottom = 8
+
+[node name="SkillName" type="Label" parent="Description" unique_id=1785739306]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 8.0
+offset_right = 104.0
+offset_bottom = 32.0
+theme_override_colors/font_color = Color(0.4745098, 0.80784315, 0.6745098, 1)
+theme_override_constants/outline_size = 3
+theme_override_font_sizes/font_size = 10
+text = "TITLE"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="DescriptionText" type="Label" parent="Description" unique_id=842918030]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 36.0
+offset_right = 102.0
+offset_bottom = 46.0
+theme_override_constants/line_spacing = 1
+theme_override_constants/outline_size = 3
+theme_override_font_sizes/font_size = 7
+text = "DESCRIÇÃO"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="SkillStatus" type="NinePatchRect" parent="Description" unique_id=1658633867]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 98.0
+offset_right = 102.0
+offset_bottom = 126.0
+texture = ExtResource("8_2b7yj")
+patch_margin_left = 8
+patch_margin_top = 8
+patch_margin_right = 8
+patch_margin_bottom = 8
+
+[node name="ConfirmHint" parent="Description/SkillStatus" unique_id=165975171 instance=ExtResource("2_mixf3")]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 0.0
+offset_bottom = 0.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
 text = "OBTER"
+
+[node name="StatusLabel" type="Label" parent="Description/SkillStatus" unique_id=214807383]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/outline_size = 3
+theme_override_font_sizes/font_size = 8
+text = "OBTIDO"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="CancelHint" parent="." unique_id=2036804904 instance=ExtResource("2_mixf3")]
 offset_left = 16.0

@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="SkillData" format=3 uid="uid://cy1kbc17esn2i"]
+
+[ext_resource type="Texture2D" uid="uid://bmssxp5qvvkxv" path="res://asset/NinjaAdventure/Ui/Skill Icon/Spell/AttackUpgrade.png" id="1_iv224"]
+[ext_resource type="Texture2D" uid="uid://dgaeob55cf63x" path="res://asset/NinjaAdventure/Ui/Skill Icon/Spell/AttackUpgradeDisabled.png" id="2_aq0o3"]
+[ext_resource type="Script" uid="uid://6lp4pvojo4bg" path="res://skill_tree/skill_data.gd" id="3_fpgvf"]
+
+[resource]
+script = ExtResource("3_fpgvf")
+skill_name = "+    DANO"
+description = "AUMENTA    O    DANO    CAUSADO    AO    INIMIGO    EM    1"
+icon = ExtResource("1_iv224")
+locked_icon = ExtResource("2_aq0o3")
+effect = 1
+value = 1

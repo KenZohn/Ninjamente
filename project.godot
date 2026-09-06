@@ -23,6 +23,7 @@ AudioManager="*uid://dtlpt4erbhftf"
 Audio="*uid://5pxfrwlfokvh"
 GameManager="*uid://dsm701jg5g8jx"
 InputManager="*uid://chy6hk2ymvg4a"
+SkillManager="*uid://dr86lbt288wrp"
 
 [display]
 

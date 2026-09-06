@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="SkillData" format=3 uid="uid://bqvyxluwgkfbt"]
+
+[ext_resource type="Script" uid="uid://6lp4pvojo4bg" path="res://skill_tree/skill_data.gd" id="1_g334x"]
+[ext_resource type="Texture2D" uid="uid://cl2fcnd10nkaj" path="res://asset/NinjaAdventure/Ui/Skill Icon/Spell/Heal.png" id="1_r3m2v"]
+[ext_resource type="Texture2D" uid="uid://bljkopwrs3oli" path="res://asset/NinjaAdventure/Ui/Skill Icon/Spell/HealDisabled.png" id="2_xanct"]
+
+[resource]
+script = ExtResource("1_g334x")
+skill_name = "+    MAX    HP"
+description = "AUMENTA    O    HP    MÁXIMO    EM    4"
+icon = ExtResource("1_r3m2v")
+locked_icon = ExtResource("2_xanct")
+value = 4

@@ -49,5 +49,13 @@ func _unhandled_input(event: InputEvent) -> void:
 		
 		get_tree().paused = true
 		
-		var skill_tree_instance = SKILL_TREE_SCENE.instantiate()
-		add_child(skill_tree_instance)
+		var skill_tree = SKILL_TREE_SCENE.instantiate()
+		
+		skill_tree.closed.connect(_on_skill_tree_closed)
+		
+		add_child(skill_tree)
+
+func _on_skill_tree_closed() -> void:
+	$HUD/HeartBar.setup(BattleManager.player_data.max_hp, BattleManager.player_data.current_hp)
+	
+	get_tree().paused = false
