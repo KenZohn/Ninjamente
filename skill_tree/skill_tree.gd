@@ -8,11 +8,16 @@ signal closed
 
 func _ready() -> void:
 	for skill in $SkillArea/Skills.get_children():
+		if skill is not Skill:
+			continue
+		
 		skill.focused.connect(_on_skill_focused)
 		skill.pressed_skill.connect(_on_skill_pressed)
 		
 		update_skill_state(skill)
 	
+	update_available_skills()
+	create_connections()
 	update_skill_points(GameManager.skill_points)
 	
 	$SkillArea/Skills/IncreaseMaxHP01.grab_focus()
@@ -27,6 +32,8 @@ func _on_skill_pressed(skill) -> void:
 			GameManager.skill_points -= 1
 			
 			update_skill_state(skill)
+			update_available_skills()
+			update_connections()
 			update_skill_points(GameManager.skill_points)
 
 func _on_skill_focused(skill) -> void:
@@ -87,3 +94,97 @@ func center_on_skill(skill: Control) -> void:
 		target_position,
 		0.3
 	).set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_OUT)
+
+#region Skill Connections
+
+var connections = [
+	["IncreaseMaxHP01", "IncreaseDamage01"],
+	["IncreaseDamage01", "IncreaseDamage02"],
+	["IncreaseDamage01", "IncreaseMaxHP02"],
+	["IncreaseDamage02", "Shuriken01"]
+]
+
+func create_connections() -> void:
+	for connection in connections:
+		var skill_a = $SkillArea/Skills.get_node(connection[0])
+		var skill_b = $SkillArea/Skills.get_node(connection[1])
+		
+		connect_skills(skill_a, skill_b)
+	
+	update_connections()
+
+func connect_skills(skill_a: Skill, skill_b: Skill) -> void:
+	var connection = Node2D.new()
+	var border = Line2D.new()
+	var line = Line2D.new()
+	
+	$SkillArea/Skills/Connections.add_child(connection)
+	
+	connection.add_child(border)
+	connection.add_child(line)
+	
+	var center_a = skill_a.position + skill_a.size / 2
+	var center_b = skill_b.position + skill_b.size / 2
+	
+	var points = PackedVector2Array([
+		center_a,
+		center_b
+	])
+	
+	border.width = 6.0
+	border.default_color = Color("263636")
+	border.points = points
+	
+	line.width = 4.0
+	line.points = points
+	
+	connection.set_meta("skill_a", skill_a)
+	connection.set_meta("skill_b", skill_b)
+	
+	update_connections()
+
+func update_connections() -> void:
+	for connection in $SkillArea/Skills/Connections.get_children():
+		var skill_a = connection.get_meta("skill_a")
+		var skill_b = connection.get_meta("skill_b")
+		var line = connection.get_child(1)
+		
+		if skill_a.state == Skill.State.ACQUIRED and skill_b.state == Skill.State.ACQUIRED:
+			line.default_color = Color("bee2c0")
+		
+		elif (
+			skill_a.state == Skill.State.ACQUIRED
+			and skill_b.state == Skill.State.AVAILABLE
+		) or (
+			skill_a.state == Skill.State.AVAILABLE
+			and skill_b.state == Skill.State.ACQUIRED
+		):
+			line.default_color = Color("758A73")
+		
+		else:
+			line.default_color = Color("2b3126")
+
+func update_available_skills() -> void:
+	for skill in $SkillArea/Skills.get_children():
+		if skill is not Skill or skill.state != Skill.State.LOCKED:
+			continue
+		
+		for connection in connections:
+			var skill_a = connection[0]
+			var skill_b = connection[1]
+			
+			if skill.name == skill_a:
+				var connected_skill = $SkillArea/Skills.get_node(skill_b)
+				
+				if connected_skill.state == Skill.State.ACQUIRED:
+					skill.state = Skill.State.AVAILABLE
+					break
+			
+			elif skill.name == skill_b:
+				var connected_skill = $SkillArea/Skills.get_node(skill_a)
+				
+				if connected_skill.state == Skill.State.ACQUIRED:
+					skill.state = Skill.State.AVAILABLE
+					break
+
+#endregion

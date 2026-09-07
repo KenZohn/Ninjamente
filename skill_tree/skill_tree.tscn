@@ -53,6 +53,9 @@ anchor_bottom = 0.5
 grow_horizontal = 2
 grow_vertical = 2
 
+[node name="Connections" type="Control" parent="SkillArea/Skills" unique_id=1957713288]
+anchors_preset = 0
+
 [node name="IncreaseMaxHP01" parent="SkillArea/Skills" unique_id=332373455 instance=ExtResource("3_86svx")]
 layout_mode = 0
 offset_left = -15.0
@@ -71,27 +74,24 @@ offset_right = 127.0
 offset_bottom = 15.0
 id = "IncreaseMaxHP02"
 data = ExtResource("4_0g56x")
-state = 1
 
 [node name="IncreaseDamage01" parent="SkillArea/Skills" unique_id=584826683 instance=ExtResource("3_86svx")]
-layout_mode = 0
-offset_left = 41.0
-offset_top = -71.0
-offset_right = 71.0
-offset_bottom = -41.0
-id = "IncreaseDamage01"
-data = ExtResource("5_8kxff")
-state = 1
-
-[node name="IncreaseDamage02" parent="SkillArea/Skills" unique_id=2122716591 instance=ExtResource("3_86svx")]
 layout_mode = 0
 offset_left = 41.0
 offset_top = -15.0
 offset_right = 71.0
 offset_bottom = 15.0
+id = "IncreaseDamage01"
+data = ExtResource("5_8kxff")
+
+[node name="IncreaseDamage02" parent="SkillArea/Skills" unique_id=2122716591 instance=ExtResource("3_86svx")]
+layout_mode = 0
+offset_left = 41.0
+offset_top = -71.0
+offset_right = 71.0
+offset_bottom = -41.0
 id = "IncreaseDamage02"
 data = ExtResource("5_8kxff")
-state = 1
 
 [node name="Shuriken01" parent="SkillArea/Skills" unique_id=1357848531 instance=ExtResource("3_86svx")]
 layout_mode = 0
